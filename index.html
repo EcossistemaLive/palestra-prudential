@@ -10,21 +10,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary-color: #0d1b2a;
-            --secondary-color: #1b263b;
+            --primary-color: #0a192f;
             --accent-color: #e0a96d;
-            --bg-color: #f7f9fa;
-            --text-color: #333333;
+            --text-main: #ffffff;
+            --text-muted: #cbd5e1;
         }
         
         body {
-            background-color: var(--bg-color);
+            background-color: var(--primary-color);
             font-family: 'Montserrat', sans-serif;
-            color: var(--text-color);
+            color: var(--text-main);
         }
 
         .reveal .slides {
@@ -34,64 +33,28 @@
         .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
-            color: var(--primary-color);
+            color: #ffffff;
             text-transform: none;
             letter-spacing: -1px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
-        .reveal h1 { font-size: 3.5em; line-height: 1.1; }
-        .reveal h2 { font-size: 2.5em; }
-        .reveal h3 { font-size: 2em; color: var(--secondary-color); }
+        .reveal h1 { font-size: 3em; line-height: 1.1; }
+        .reveal h2 { font-size: 2.2em; color: var(--accent-color); }
+        .reveal h3 { font-size: 1.8em; color: #ffffff; }
         .reveal h4 { font-size: 1.5em; color: var(--accent-color); font-weight: 600; }
 
         .reveal p, .reveal li {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-            font-size: 0.9em;
-            line-height: 1.5;
-            color: #555;
+            font-weight: 400;
+            font-size: 1.2em; /* Much larger font size */
+            line-height: 1.6;
+            color: var(--text-main); /* Force white/light text */
         }
         
         .reveal strong {
             font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .reveal .progress {
             color: var(--accent-color);
-        }
-        
-        .reveal .controls {
-            color: var(--primary-color);
-        }
-
-        /* Modern Slide Layouts */
-        .split-slide {
-            display: flex;
-            align-items: center;
-            height: 100vh;
-        }
-        
-        .split-left {
-            width: 50%;
-            padding: 50px;
-        }
-
-        .split-right {
-            width: 50%;
-            height: 100vh;
-            background-color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            padding: 50px;
-            box-sizing: border-box;
-        }
-        
-        .split-right h2, .split-right h3, .split-right h4, .split-right p, .split-right li {
-            color: white;
         }
 
         .accent-text {
@@ -101,104 +64,38 @@
         .box-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 30px;
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .box {
-            background: white;
+            background: rgba(255, 255, 255, 0.05);
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--accent-color);
+            border-radius: 12px;
+            border-left: 5px solid var(--accent-color);
         }
         
         .box h4 {
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            color: #ffffff;
         }
 
-        .pricing-grid {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            margin-top: 40px;
+        .box p {
+            font-size: 1em;
+            color: var(--text-muted);
         }
 
-        .pricing-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-            text-align: center;
-            flex: 1;
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-        
-        .pricing-card.featured {
-            transform: scale(1.05);
-            border: 2px solid var(--accent-color);
-            box-shadow: 0 20px 40px rgba(224, 169, 109, 0.2);
-        }
-
-        .pricing-card h4 {
-            color: var(--primary-color);
-            font-size: 1.2em;
-        }
-
-        .pricing-card .price {
-            font-size: 2.5em;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin: 20px 0 5px;
-        }
-        
-        .pricing-card .price-strike {
-            text-decoration: line-through;
-            color: #aaa;
-            font-size: 0.9em;
-        }
-
-        .pricing-card .per-session {
-            color: var(--accent-color);
-            font-size: 0.8em;
-            font-weight: 600;
-        }
-
-        .tag {
-            background: var(--accent-color);
-            color: white;
-            font-size: 0.4em;
-            font-weight: bold;
-            padding: 5px 15px;
-            border-radius: 20px;
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .scarcity-alert {
-            background-color: rgba(224, 169, 109, 0.1);
-            border-left: 4px solid var(--accent-color);
-            padding: 15px 20px;
-            margin-top: 30px;
-            font-size: 0.8em;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-        
         .quote {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.2em;
-            color: var(--secondary-color);
-            border-left: 3px solid var(--accent-color);
-            padding-left: 20px;
-            margin: 30px 0;
+            font-size: 1.5em;
+            color: #ffffff;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 30px;
+            margin: 40px 0;
+            background: rgba(255,255,255,0.02);
+            padding: 20px 20px 20px 30px;
         }
         
         ul.clean-list {
@@ -209,8 +106,8 @@
         
         ul.clean-list li {
             position: relative;
-            padding-left: 30px;
-            margin-bottom: 15px;
+            padding-left: 40px;
+            margin-bottom: 25px;
         }
         
         ul.clean-list li::before {
@@ -219,7 +116,7 @@
             font-size: 2em;
             position: absolute;
             left: 0;
-            top: -10px;
+            top: -15px;
         }
     </style>
 </head>
@@ -228,34 +125,34 @@
         <div class="slides">
             
             <!-- Slide 1 -->
-            <section data-background-color="#f7f9fa">
-                <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <section data-background-color="#0a192f">
+                <div style="text-align: center; max-width: 900px; margin: 0 auto;">
                     <h4 class="accent-text" style="text-transform: uppercase; letter-spacing: 2px;">Executive Performance</h4>
-                    <h1>Destravamento de <br>Performance e Execução</h1>
-                    <p style="font-size: 1.2em; margin-top: 30px;">A Arte do Básico Bem Feito</p>
-                    <div style="margin-top: 50px; border-top: 1px solid #ddd; padding-top: 20px;">
-                        <p style="font-weight: 600; color: var(--primary-color);">Luiz Portal</p>
+                    <h1 style="margin-top: 20px;">Destravamento de <br>Performance e Execução</h1>
+                    <p style="font-size: 1.5em; margin-top: 40px; color: var(--text-muted);">A Arte do Básico Bem Feito</p>
+                    <div style="margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px;">
+                        <p style="font-weight: 600; font-size: 1.3em;">Luiz Portal</p>
                     </div>
                 </div>
             </section>
 
             <!-- Slide 2 -->
-            <section data-background-color="#0d1b2a">
+            <section data-background-color="#0a192f">
                 <div style="text-align: center;">
-                    <h2 style="color: white;">Nível de Jogo da Sala</h2>
-                    <p style="color: #aaa; margin-bottom: 50px;">Quem está operando em alta performance hoje?</p>
+                    <h2>Nível de Jogo da Sala</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 60px;">Quem está operando em alta performance hoje?</p>
                     
-                    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-                        <h3 class="fragment accent-text" style="background: rgba(255,255,255,0.05); padding: 15px 30px; border-radius: 8px;">50 Semanas?</h3>
-                        <h3 class="fragment accent-text" style="background: rgba(255,255,255,0.05); padding: 15px 30px; border-radius: 8px;">100 Semanas?</h3>
-                        <h3 class="fragment accent-text" style="background: rgba(255,255,255,0.05); padding: 15px 30px; border-radius: 8px;">PTC?</h3>
-                        <h3 class="fragment accent-text" style="background: rgba(255,255,255,0.05); padding: 15px 30px; border-radius: 8px;">PII?</h3>
+                    <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                        <h3 class="fragment accent-text" style="background: rgba(255,255,255,0.1); padding: 20px 40px; border-radius: 12px;">50 Semanas?</h3>
+                        <h3 class="fragment accent-text" style="background: rgba(255,255,255,0.1); padding: 20px 40px; border-radius: 12px;">100 Semanas?</h3>
+                        <h3 class="fragment accent-text" style="background: rgba(255,255,255,0.1); padding: 20px 40px; border-radius: 12px;">PTC?</h3>
+                        <h3 class="fragment accent-text" style="background: rgba(255,255,255,0.1); padding: 20px 40px; border-radius: 12px;">PII?</h3>
                     </div>
                 </div>
             </section>
 
             <!-- Slide 3 -->
-            <section>
+            <section data-background-color="#0a192f">
                 <h2>O Elefante na Sala</h2>
                 <p>Ninguém aguenta mais treinamentos teóricos e scripts robóticos.</p>
                 
@@ -266,7 +163,7 @@
                     </div>
                     <div class="box fragment">
                         <h4>A Abordagem Robótica</h4>
-                        <p>Tentativa de fechar vendas sem ouvir. Gatilhos aplicados sem contexto, que geram repulsa.</p>
+                        <p>Tentativa de fechar vendas sem ouvir. Gatilhos aplicados sem contexto geram repulsa.</p>
                     </div>
                     <div class="box fragment">
                         <h4>Falta de Conexão</h4>
@@ -280,21 +177,21 @@
             </section>
 
             <!-- Slide 4 -->
-            <section data-background-color="#1b263b">
-                <h2 style="color: white;">O Básico Bem Feito</h2>
-                <h4 class="accent-text">A Preparação (Antes do "Alô")</h4>
+            <section data-background-color="#0a192f">
+                <h2>O Básico Bem Feito</h2>
+                <h4 class="accent-text" style="margin-bottom: 40px;">A Preparação (Antes do "Alô")</h4>
                 
-                <ul class="clean-list" style="margin-top: 40px; color: #e0e0e0;">
-                    <li class="fragment" style="color: #e0e0e0;"><strong>Investigação Prévia de Excelência:</strong> O Rapport não é uma técnica piegas, é entender o contexto antes de abrir a boca.</li>
-                    <li class="fragment" style="color: #e0e0e0;"><strong>Repertório:</strong> Se você não investigar o cliente (LinkedIn/Instagram), você vai ter que improvisar. E improviso sem repertório soa falso.</li>
-                    <li class="fragment" style="color: #e0e0e0;"><strong>Ser Recomendável:</strong> O fechamento ruim gera *cold calls*. O fechamento com autoridade gera recomendações de alto *fit* (receita e estrutura).</li>
+                <ul class="clean-list">
+                    <li class="fragment"><strong>Investigação Prévia de Excelência:</strong> O Rapport não é uma técnica piegas, é entender o contexto antes de abrir a boca.</li>
+                    <li class="fragment"><strong>Repertório:</strong> Se você não investigar o cliente (LinkedIn/Instagram), você vai ter que improvisar. E improviso sem repertório soa falso.</li>
+                    <li class="fragment"><strong>Ser Recomendável:</strong> O fechamento ruim gera ligações frias. O fechamento com autoridade gera recomendações de alto fit (receita e estrutura).</li>
                 </ul>
             </section>
 
             <!-- Slide 5 -->
-            <section>
+            <section data-background-color="#0a192f">
                 <h2>Comunicação e Autoridade</h2>
-                <p>Ferramentas corporativas para dominar a mesa sem parecer arrogante.</p>
+                <p>Ferramentas para dominar a mesa sem parecer arrogante.</p>
                 
                 <div class="box-grid">
                     <div class="box fragment">
@@ -311,79 +208,56 @@
                     </div>
                     <div class="box fragment">
                         <h4 class="accent-text">Escuta Ativa</h4>
-                        <p>O cliente já te dá a venda. O silêncio estratégico vende muito mais que o desespero de vomitar argumentos.</p>
+                        <p>O cliente já te dá a venda. O silêncio estratégico vende muito mais que vomitar argumentos.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Slide 6 -->
-            <section>
+            <section data-background-color="#0a192f">
                 <h2>A Gestão do <em>Delay</em></h2>
                 <div class="quote">
                     "O tempo ocioso quebra o negócio. A rotina salva."
                 </div>
                 
                 <p>O cliente se atrasou ou deu <em>no-show</em>. O que você faz?</p>
-                <ul class="clean-list" style="margin-top: 30px;">
+                <ul class="clean-list" style="margin-top: 40px;">
                     <li class="fragment">O profissional médio vai para o celular e perde o ritmo.</li>
-                    <li class="fragment">Os <em>Top Performers</em> entram em ação imediata: cobrança de inadimplentes, resgate de clientes, agendamento reverso.</li>
-                    <li class="fragment"><strong>Movimento gera movimento.</strong></li>
+                    <li class="fragment">Os <strong>Top Performers</strong> entram em ação imediata: cobrança de inadimplentes, resgate de clientes, agendamento reverso.</li>
+                    <li class="fragment"><strong class="accent-text">Movimento gera movimento.</strong></li>
                 </ul>
             </section>
 
             <!-- Slide 7 -->
-            <section data-background-color="#0d1b2a">
-                <h2 style="color: white; text-align: center;">Clareza de Metas</h2>
+            <section data-background-color="#0a192f">
+                <h2 style="text-align: center;">Clareza de Metas</h2>
                 
-                <div style="display: flex; gap: 40px; margin-top: 50px;">
-                    <div style="flex: 1; background: white; padding: 40px; border-radius: 10px;">
-                        <h3 style="color: var(--primary-color);">Metas de Resultado</h3>
-                        <p style="color: #666; font-size: 1.1em;">PTC, PII, Faturamento, Prêmios e Reconhecimento.</p>
-                        <p style="color: #aaa; font-size: 0.9em; margin-top: 20px;"><em>"Onde eu quero chegar."</em></p>
+                <div style="display: flex; gap: 40px; margin-top: 60px;">
+                    <div style="flex: 1; background: rgba(255,255,255,0.05); padding: 50px; border-radius: 12px; border-top: 4px solid #ffffff;">
+                        <h3 style="color: #ffffff; margin-bottom: 20px;">Metas de Resultado</h3>
+                        <p style="color: var(--text-muted); font-size: 1.1em;">PTC, PII, Faturamento, Prêmios e Reconhecimento.</p>
+                        <p style="color: #ffffff; font-size: 1em; margin-top: 30px;"><em>"Onde eu quero chegar."</em></p>
                     </div>
-                    <div style="flex: 1; background: var(--accent-color); padding: 40px; border-radius: 10px;">
-                        <h3 style="color: var(--primary-color);">Metas de Esforço</h3>
-                        <p style="color: var(--primary-color); font-size: 1.1em; font-weight: 500;">O como. A estruturação da rotina e a capacidade de executar o planejado inegociavelmente todos os dias.</p>
-                        <p style="color: rgba(0,0,0,0.5); font-size: 0.9em; margin-top: 20px;"><em>"O que me leva até lá."</em></p>
+                    <div style="flex: 1; background: rgba(224, 169, 109, 0.1); padding: 50px; border-radius: 12px; border-top: 4px solid var(--accent-color);">
+                        <h3 style="color: var(--accent-color); margin-bottom: 20px;">Metas de Esforço</h3>
+                        <p style="color: #ffffff; font-size: 1.1em;">A estruturação da rotina e a capacidade de executar o planejado inegociavelmente todos os dias.</p>
+                        <p style="color: var(--accent-color); font-size: 1em; margin-top: 30px;"><em>"O que me leva até lá."</em></p>
                     </div>
                 </div>
             </section>
 
-            <!-- Slide 8 -->
-            <section>
+            <!-- Slide 8: Convite para 1-on-1 sem preços -->
+            <section data-background-color="#0a192f">
                 <h4 class="accent-text" style="text-align: center; text-transform: uppercase;">O Próximo Passo</h4>
-                <h2 style="text-align: center;">Acompanhamento de Performance</h2>
-                <p style="text-align: center; margin-bottom: 40px;">Você sabe o que fazer, mas falha na execução. Eu estou aqui para te dar clareza técnica e clínica.</p>
+                <h2 style="text-align: center; margin-top: 20px;">Acompanhamento de Performance</h2>
                 
-                <div class="pricing-grid">
-                    <div class="pricing-card fragment">
-                        <h4>Aceleração Tática</h4>
-                        <p class="font-sm" style="margin-bottom: 0;">3 Encontros</p>
-                        <p class="price-strike">R$ 5.400</p>
-                        <div class="price">R$ 4.500</div>
-                        <p class="per-session">R$ 1.500 / sessão</p>
-                    </div>
-                    
-                    <div class="pricing-card featured fragment">
-                        <div class="tag">Mais Escolhido</div>
-                        <h4>Ajuste de Rota</h4>
-                        <p class="font-sm" style="margin-bottom: 0;">5 Encontros</p>
-                        <p class="price-strike">R$ 9.000</p>
-                        <div class="price">R$ 6.000</div>
-                        <p class="per-session">R$ 1.200 / sessão</p>
-                    </div>
-                    
-                    <div class="pricing-card fragment">
-                        <h4>Performance Integral</h4>
-                        <p class="font-sm" style="margin-bottom: 0;">8 Encontros</p>
-                        <p class="price-strike">R$ 14.400</p>
-                        <div class="price">R$ 8.000</div>
-                        <p class="per-session">R$ 1.000 / sessão</p>
-                    </div>
+                <div class="quote" style="text-align: center; border-left: none; border-bottom: 4px solid var(--accent-color); padding-left: 0; padding-bottom: 40px;">
+                    Saber o que fazer é fácil. O difícil é a execução.
                 </div>
-
-                <div class="scarcity-alert fragment">
-                    ⏱ Para garantir profundidade clínica em cada acompanhamento, tenho apenas <strong>3 vagas imediatas</strong> na minha agenda. Fechamento no um-a-um.
+                
+                <div style="text-align: center; margin-top: 50px;">
+                    <p style="font-size: 1.3em;">Estou à disposição nas próximas horas aqui na unidade.</p>
+                    <p style="font-size: 1.2em; margin-top: 30px; color: var(--text-muted);">Vamos mapear seus gargalos operacionais individualmente?</p>
                 </div>
             </section>
 
@@ -397,8 +271,8 @@
             controls: true,
             progress: true,
             center: true,
-            transition: 'fade', // Fade looks more elegant and modern
-            width: 1200, // wider modern format
+            transition: 'fade',
+            width: 1280,
             height: 800,
             margin: 0.1
         });
