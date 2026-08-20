@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Interesse - Prudential</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0a192f;
+            --secondary-color: #112240;
+            --accent-color: #e0a96d;
+            --accent-hover: #c99356;
+            --text-main: #ffffff;
+            --text-muted: #8892b0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--primary-color);
+            background-image: radial-gradient(circle at center, #112240 0%, #0a192f 100%);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .capture-container {
+            background-color: rgba(17, 34, 64, 0.85);
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 450px;
+            border-top: 4px solid var(--accent-color);
+            text-align: center;
+            box-sizing: border-box;
+            margin: 20px;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 1em;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+
+        .accent-text {
+            color: var(--accent-color);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input-group {
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #233554;
+            background-color: #0a192f;
+            color: #ffffff;
+            border-radius: 6px;
+            font-size: 1em;
+            font-family: 'Montserrat', sans-serif;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .input-group input::placeholder {
+            color: #495670;
+        }
+
+        button {
+            background-color: var(--accent-color);
+            color: #0a192f;
+            border: none;
+            padding: 16px;
+            font-size: 1.1em;
+            font-weight: 800;
+            border-radius: 6px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+
+        button:hover {
+            background-color: var(--accent-hover);
+        }
+        
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8em;
+            color: #495670;
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(10, 25, 47, 0.3);
+            border-radius: 50%;
+            border-top-color: #0a192f;
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .success-message {
+            display: none;
+            background-color: rgba(46, 204, 113, 0.1);
+            color: #2ecc71;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #2ecc71;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="capture-container">
+        <div class="header">
+            <h4 class="accent-text" style="text-transform: uppercase; letter-spacing: 2px; margin-top:0;">Luiz Portal</h4>
+            <h1>Lista de Interesse</h1>
+            <p>Acompanhamento de Performance e Execução. Vagas limitadas para atendimento 1-on-1.</p>
+        </div>
+
+        <!-- O FORMULÁRIO -->
+        <form name="submit-to-google-sheet">
+            <div class="input-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="Nome" placeholder="Seu nome" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="telefone">Telefone (WhatsApp)</label>
+                <input type="tel" id="telefone" name="Telefone" placeholder="(00) 00000-0000" required>
+            </div>
+
+            <button type="submit" id="submitBtn">
+                <span class="btn-text">Quero uma Vaga</span>
+                <div class="spinner"></div>
+            </button>
+        </form>
+        
+        <div class="success-message" id="successMessage">
+            Sua solicitação foi enviada! O Luiz entrará em contato em breve.
+        </div>
+
+        <div class="footer">
+            Seus dados estão seguros e não serão compartilhados.
+        </div>
+    </div>
+
+    <!-- SCRIPT DE CONEXÃO -->
+    <script>
+        // ATENÇÃO: COLE AQUI O URL QUE O GOOGLE APPS SCRIPT GERAR PARA VOCÊ!
+        const scriptURL = 'COLE_O_SEU_LINK_AQUI'; 
+        
+        const form = document.forms['submit-to-google-sheet'];
+        const btnText = document.querySelector('.btn-text');
+        const spinner = document.querySelector('.spinner');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            if(scriptURL === 'COLE_O_SEU_LINK_AQUI') {
+                alert('Atenção: Você precisa colocar o URL do Google Apps Script no arquivo HTML!');
+                return;
+            }
+
+            // Mostra o loading
+            btnText.style.display = 'none';
+            spinner.style.display = 'block';
+            submitBtn.disabled = true;
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                })
+                .catch(error => {
+                    alert('Erro ao enviar! Verifique a conexão e tente novamente.');
+                    console.error('Error!', error.message);
+                    
+                    // Restaura botão
+                    btnText.style.display = 'block';
+                    spinner.style.display = 'none';
+                    submitBtn.disabled = false;
+                });
+        });
+    </script>
+</body>
+</html>
