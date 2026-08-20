@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook de Conversão Individual - 1-on-1</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f4f6f8;
+            --text-main: #2d3748;
+            --text-light: #718096;
+            --primary: #1a365d;
+            --accent: #e53e3e;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            color: var(--primary);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            color: var(--text-light);
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .info-box {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .info-box div strong {
+            display: block;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #a0aec0;
+        }
+
+        .phase-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            position: relative;
+        }
+
+        .phase-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background-color: var(--primary);
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .phase-card h2 {
+            margin-top: 0;
+            color: var(--primary);
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .speech-bubble {
+            background-color: #edf2f7;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            font-style: italic;
+            color: #2b6cb0;
+        }
+        
+        .speech-bubble strong {
+            color: var(--primary);
+            font-style: normal;
+        }
+
+        .action-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .action-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+        }
+
+        .action-list li::before {
+            content: "✓";
+            color: #38a169;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 4px solid #dd6b20;
+            padding: 15px 20px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+
+        .pricing-section {
+            background-color: #ebf8ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #bee3f8;
+        }
+
+        .pricing-section ul {
+            list-style-type: square;
+            color: #2b6cb0;
+        }
+        
+        .pricing-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .pricing-section ul li strong {
+            color: var(--primary);
+        }
+        
+        .scarcity {
+            text-align: center;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px dashed var(--accent);
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Playbook de Conversão Individual</h1>
+        <p>Roteiro cirúrgico para a sessão 1-on-1 com o Life Planner, baseado na dinâmica de leitura de comportamento humano e diagnóstico de performance.</p>
+    </div>
+
+    <div class="info-box">
+        <div>
+            <strong>Tempo Total</strong>
+            30 Minutos
+        </div>
+        <div>
+            <strong>Ambiente</strong>
+            Privado e Sem Interrupções
+        </div>
+        <div style="text-align: right;">
+            <strong>O Grande Objetivo</strong>
+            Fazer o cliente pedir para comprar.
+        </div>
+    </div>
+
+    <!-- Fase 1 -->
+    <div class="phase-card">
+        <h2>Fase 1: Conexão, Humildade e Investigação (10 Minutos)</h2>
+        <p>O objetivo é quebrar a barreira defensiva e fazer perguntas interessadas sobre a operação dele. Exale autoridade sem parecer arrogante.</p>
+        
+        <div class="speech-bubble">
+            <strong>Abertura de Luiz:</strong><br>
+            "Fulano, obrigado por vir conversar. Como eu disse lá no workshop, não vim vender fórmula de palco. Meu objetivo aqui é entender o seu momento atual na operação da Prudential. Me conta: há quanto tempo você está rodando? Como está o seu ritmo de constância de semanas?"
+        </div>
+        
+        <h4>O que buscar ativamente (Escuta Clínica):</h4>
+        <ul class="action-list">
+            <li>Ele fala rápido demais? Demonstra ansiedade nas palavras?</li>
+            <li>Ele fez alguma pergunta sobre você ou está 100% focado em si mesmo?</li>
+            <li>Qual é o principal sintoma que ele reclama? (Ex: "Não consigo agendar ligações").</li>
+        </ul>
+    </div>
+
+    <!-- Fase 2 -->
+    <div class="phase-card">
+        <h2>Fase 2: A Desconstrução do Sintoma (10 Minutos)</h2>
+        <p>Destrua as desculpas padrão e mostre que o problema real dele não é o que ele imagina. É o momento em que você atua como "médico" apontando a causa raiz.</p>
+        
+        <div class="speech-bubble">
+            <strong>Se ele reclamar de ligações frias (no-show/não agenda):</strong><br>
+            "Você acha que o seu problema é a ligação fria, mas ela só é fria porque você falhou no passo anterior. Quem te recomendou não estava encantado o suficiente para passar recomendações de alto fit. Você pediu recomendações ou foi recomendável? Como está a sua preparação silenciosa antes de ligar?"
+        </div>
+
+        <div class="warning-box">
+            <strong>A Fisgada Comportamental (O Feedback Cirúrgico na Mesa)</strong><br>
+            <em>Use o comportamento dele na mesa contra (e a favor de) ele mesmo:</em><br><br>
+            "Olha que interessante: a gente está conversando há 10 minutos. Você me despejou suas dificuldades comerciais, mas em nenhum momento me perguntou quem eu sou, de onde venho ou o que eu faço. Você foi focado no seu resultado útil. Na frente do cliente, você provavelmente faz o mesmo: impõe a técnica, vomita conteúdo e não escuta. É por isso que ouve não."
+        </div>
+    </div>
+
+    <!-- Fase 3 -->
+    <div class="phase-card">
+        <h2>Fase 3: A Transição para o Acompanhamento (5 Minutos)</h2>
+        <p>Mostre que o problema tem camadas. Posicione-se como o guia externo que vai ajudá-lo na execução prática diária.</p>
+        
+        <div class="speech-bubble">
+            <strong>A Direção:</strong><br>
+            "Saber o que fazer é fácil. O difícil é a execução consistente. O papel do seu MFB (Elmo) é te cobrar metas. Mas ele não tem tempo para sentar com você e corrigir esses cacoetes de voz, ritmo e postura no um-a-um. Como cliente Prudential de alta renda e clínico do comportamento, eu consigo te dar a clareza exata de onde você ganha ou perde a mesa."
+        </div>
+
+        <p><strong>A Pergunta de Fechamento Natural:</strong> Neste ponto, impactado, o Life Planner deve perguntar: <em>"Cara... faz todo sentido. Como funciona o seu trabalho? Como posso estruturar isso com você?"</em></p>
+    </div>
+
+    <!-- Fase 4 -->
+    <div class="phase-card">
+        <h2>Fase 4: Apresentação de Preços e Fechamento (5 Minutos)</h2>
+        <p>Nunca fale em "mentoria" (termo saturado). Apresente o <strong>Acompanhamento de Performance</strong> de forma progressiva.</p>
+        
+        <div class="speech-bubble">
+            <strong>Apresentação Progressiva:</strong><br>
+            "Nenhum problema complexo se resolve em um único encontro. Por isso, eu não trabalho com sessões avulsas. Eu trabalho com três formatos de acompanhamento..."
+        </div>
+
+        <div class="pricing-section">
+            <ul>
+                <li><strong>Aceleração Tática (3 Encontros):</strong> Destravar o maior gargalo (oratória, script). R$ 1.500/encontro (Total: R$ 4.500).</li>
+                <li><strong>Ajuste de Rota (5 Encontros):</strong> Alinhar escuta ativa, postura de autoridade e constância. R$ 1.200/encontro (Total: R$ 6.000).</li>
+                <li><strong>Performance Integral (8 Encontros):</strong> Mapeamento estratégico, rotina e gestão do delay. R$ 1.000/encontro (Total: R$ 8.000).</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <strong>Tratamento de Objeção e Moeda de Troca:</strong><br>
+            Se for um profissional de alto potencial mas reclamar do preço:<br>
+            "Fulano, eu gostei de você. Vamos fazer o seguinte: faço o pacote de 8 encontros pelo valor de 5 (R$ 6.000 à vista ou 50/50). Em contrapartida, você me abre portas. Você me indica 3 clientes C-Level do seu portfólio corporativo. Fechado?"
+        </div>
+        
+        <div class="scarcity">
+            Gatilho de Escassez: "Para garantir profundidade clínica, tenho apenas 3 vagas imediatas na minha agenda. Conseguimos começar na próxima semana?"
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
